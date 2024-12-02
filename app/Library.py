@@ -10,12 +10,12 @@ def check_creds(username,password):
             return True
     return False
 
-def validate_article(title,content):
+def validate_article(title,content,original_title,original_content):
     all_articles = Article.query.all()
     for article in all_articles:
-        if article.title == title:
+        if article.title == title and article.title != original_title:
             return "There is already an article with that name. Please choose a different name for your article."
-        if article.content == content:
+        if article.content == content and article.content != original_content:
             return "The content of the article is a copy of a previously existing article."
     return True
 
@@ -25,6 +25,8 @@ def hash_data(data):
     return hasher.hexdigest()
 
 def get_id(table,data):
+    if not data:
+        return False
     if table == "category":
         for item in Category.query.all():
             if item.category == data:

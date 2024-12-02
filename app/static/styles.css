@@ -1,3 +1,23 @@
+h1 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: 'Lucida Sans';
+    background-color: whitesmoke;
+}
+
+.nav-link {
+    color: purple !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: orangered !important;
+}
+
+
 .card {
     background-color: white;
 }
@@ -6,4 +26,19 @@
     font-size: x-large;
     font-weight: bolder;
     color: darkblue;
+}
+
+.btn {
+    border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-5px);
+}
+
+.alert {
+    margin-top: 20px;
+    border-radius: 5px;
 }

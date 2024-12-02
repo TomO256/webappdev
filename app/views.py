@@ -112,7 +112,8 @@ def create():
             flash(status)
             return render_template("create.html",
                            title="Write Article",
-                           form=ArticleForm(title=form.title.data,content=form.content.data,category=form.category.data))
+                           form=ArticleForm(title=form.title.data,content=form.content.data,category=form.category.data,
+                                            submit_message="Create Article"))
         category_id = get_id("category",form.category.data)
         author_id = get_id("user",signed_in_as)
         article = Article(title=form.title.data,content=form.content.data,category_id=category_id,author_id=author_id)
@@ -122,7 +123,43 @@ def create():
 
     return render_template("create.html",
                            title="Write Article",
-                           form=form)
+                           form=form,
+                           submit_message="Create Article")
+
+@app.route("/edit/<int:id>", methods=["GET","POST"])
+def edit(id):
+    article = Article.query.get(id)
+    if article.author_id != get_id("user",signed_in_as):
+        return redirect("/discover")
+    form=ArticleForm(title=article.title,content=article.content,category=article.category)
+    if form.validate_on_submit():
+        logging.info("Validated Article Form")
+        status = validate_article(form.title.data,form.content.data,article.title,article.content)
+        logging.info(status)
+        if status != True:
+            flash(status)
+            return render_template("create.html",
+                           title="Write Article",
+                           form=ArticleForm(title=form.title.data,content=form.content.data,category=form.category.data,
+                                            submit_message="Create Article"))
+        article.title = form.title.data
+        article.content = form.content.data
+        article.category_id = get_id("category",form.category.data)
+        db.session.commit()
+        return redirect("/portfolio")
+    return render_template("edit.html",
+                        title="Edit Article",
+                        form=form,
+                        submit_message="Edit Article")
+
+@app.route("/delete/<int:id>")
+def delete(id):
+    article = Article.query.get(id)
+    if article.author_id != get_id("user",signed_in_as):
+        return redirect("/discover")
+    db.session.delete(article)
+    db.session.commit()
+    return redirect("/portfolio")
 
 @app.route("/view/<int:id>")
 def view(id):

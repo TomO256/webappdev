@@ -26,7 +26,11 @@
                                 </br>
                                 Category: {{ article.category.category}}
                                 {% include "reactions.html" %}
+                                <div>
                                 <a href="{{ url_for('view', id=article.id) }}" class="btn btn-primary btn-block">View</a>
+                                <a href="{{ url_for('edit', id=article.id) }}" class="btn btn-warning btn-block">Edit</a>
+                                <a href="{{ url_for('delete', id=article.id) }}" class="btn btn-danger btn-block">Delete</a>
+                                </div>
                             </p>
                         </div>
                     </div>
