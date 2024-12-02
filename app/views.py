@@ -152,8 +152,8 @@ def react():
         article.grimaces += 1
     elif reaction == "blanks":
         article.blanks += 1
-    elif reaction == "questions":
-        article.questions += 1
+    elif reaction == "surprises":
+        article.surprises += 1
     
     db.session.commit()
     
@@ -163,7 +163,7 @@ def react():
         "laughs": article.laughs,
         "grimaces": article.grimaces,
         "blanks": article.blanks,
-        "questions": article.questions
+        "surprises": article.surprises
     })
 
 

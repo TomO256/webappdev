@@ -28,7 +28,7 @@ class Article(db.Model):
     laughs = db.Column(db.Integer,default=0)
     grimaces = db.Column(db.Integer,default=0)
     blanks = db.Column(db.Integer,default=0)
-    questions = db.Column(db.Integer,default=0)
+    surprises = db.Column(db.Integer,default=0)
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
     def __repr__(self):

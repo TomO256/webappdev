@@ -22,6 +22,8 @@
                                 <i>By {{ article.user.username | capitalize }} </i>
                                 </br>
                                 Category: {{ article.category.category}}
+                                {% include "reactions.html" %}
+                                <a href="{{ url_for('view', id=article.id) }}" class="btn btn-primary btn-block">View</a>
                             </p>
                         </div>
                     </div>

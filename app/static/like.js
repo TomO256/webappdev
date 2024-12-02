@@ -21,8 +21,8 @@ $(document).ready(function(){
             reactionType = 'grimaces';
         } else if ($(this).find('i').hasClass('fa-meh')) {
             reactionType = 'blanks';
-        } else if ($(this).find('i').hasClass('fa-question-circle')) {
-            reactionType = 'questions';
+        } else if ($(this).find('i').hasClass('fa-surprise')) {
+            reactionType = 'surprises';
         }
 
         $.ajax({
@@ -34,15 +34,15 @@ $(document).ready(function(){
             success: function(response){
                 console.log(response);
                 if (reactionType === "likes") {
-                    clicked_obj.find("#likes").text(response.likes);
+                    clicked_obj.find("#likes").text(" "+response.likes+"  ");
                 } else if (reactionType === "laughs") {
-                    clicked_obj.find("#laughs").text(response.laughs);
+                    clicked_obj.find("#laughs").text(" "+response.laughs);
                 } else if (reactionType === "grimaces") {
-                    clicked_obj.find("#grimaces").text(response.grimaces);
+                    clicked_obj.find("#grimaces").text(" "+response.grimaces);
                 } else if (reactionType === "blanks") {
-                    clicked_obj.find("#blanks").text(response.blanks);
-                } else if (reactionType === "questions") {
-                    clicked_obj.find("#questions").text(response.questions);
+                    clicked_obj.find("#blanks").text(" "+response.blanks);
+                } else if (reactionType === "surprises") {
+                    clicked_obj.find("#surprises").text("      "+response.surprises);
                 }
             },
             error: function(error){
