@@ -138,10 +138,10 @@ def edit(id):
         logging.info(status)
         if status != True:
             flash(status)
-            return render_template("create.html",
-                           title="Write Article",
-                           form=ArticleForm(title=form.title.data,content=form.content.data,category=form.category.data,
-                                            submit_message="Create Article"))
+            return render_template("edit.html",
+                           title="Edit Article",
+                           form=ArticleForm(title=form.title.data,content=form.content.data,category=form.category.data),
+                                            submit_message="Edit Article")
         article.title = form.title.data
         article.content = form.content.data
         article.category_id = get_id("category",form.category.data)

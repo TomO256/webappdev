@@ -10,7 +10,7 @@ def check_creds(username,password):
             return True
     return False
 
-def validate_article(title,content,original_title,original_content):
+def validate_article(title,content,original_title=None,original_content=None):
     all_articles = Article.query.all()
     for article in all_articles:
         if article.title == title and article.title != original_title:

@@ -23,7 +23,7 @@
                                 
                                 <i>By {{ article.user.username | capitalize }} </i>
                                 </br>
-                                Category: {{ article.category.category}}
+                                {{ article.category.category}}
                                 {% include "reactions.html" %}
                                 </br></br>
                                 <a href="{{ url_for('view', id=article.id) }}" class="btn btn-primary btn-block">Continue Reading</a>
