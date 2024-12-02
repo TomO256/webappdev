@@ -24,7 +24,7 @@ def hash_data(data):
     hasher.update(data.encode())
     return hasher.hexdigest()
 
-def get_by_id(table,data):
+def get_id(table,data):
     if table == "category":
         for item in Category.query.all():
             if item.category == data:
@@ -38,7 +38,7 @@ def get_by_id(table,data):
             if item.title == data:
                 return item.id
     else:
-        logging.error("Error in Library - get_by_id: Unable to detect table")
+        logging.error("Error in Library - get_id: Unable to detect table")
         return False
     return False
 

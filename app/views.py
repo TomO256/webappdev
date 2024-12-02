@@ -89,7 +89,7 @@ def discover():
 def portfolio():
     if not signed_in_as:
         return redirect("/")         
-    user_id = get_by_id("user",signed_in_as)
+    user_id = get_id("user",signed_in_as)
     user_articles = Article.query.filter_by(author_id=user_id).all()
     return render_template("portfolio.html",
                            title="Portfolio",
@@ -109,8 +109,8 @@ def create():
             return render_template("create.html",
                            title="Write Article",
                            form=ArticleForm(title=form.title.data,content=form.content.data,category=form.category.data))
-        category_id = get_by_id("category",form.category.data)
-        author_id = get_by_id("user",signed_in_as)
+        category_id = get_id("category",form.category.data)
+        author_id = get_id("user",signed_in_as)
         article = Article(title=form.title.data,content=form.content.data,category_id=category_id,author_id=author_id)
         db.session.add(article)
         db.session.commit()
@@ -119,6 +119,16 @@ def create():
     return render_template("create.html",
                            title="Write Article",
                            form=form)
+
+@app.route("/view/<int:id>")
+def view(id):
+    '''
+    View an article in a full page.
+    '''
+    article = Article.query.get(id)
+    return render_template("view_article.html",
+                           title = article.title,
+                           article = article)
 
 @app.route("/like",methods=["POST"])
 def like():

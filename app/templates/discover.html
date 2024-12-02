@@ -17,8 +17,10 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ article.title }}</h5>
                             <p class="card-text">
+                                
                                 <b>{{ article.content | truncate(200,True, '...',0) }}</b>
                                 </br>
+                                
                                 <i>By {{ article.user.username | capitalize }} </i>
                                 </br>
                                 Category: {{ article.category.category}}
@@ -27,7 +29,10 @@
                                 <a class="like" id="{{article.id}}">
                                     <i class="far fa-thumbs-up"></i><span id="likes">Likes: {{ article.likes }}</span>
                                 </a>                                
+                                <a href="{{ url_for('view', id=article.id) }}" class="btn btn-primary btn-block ">Continue Reading</a>
+
                             </p>
+
                         </div>
                     </div>
                 </div>

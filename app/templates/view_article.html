@@ -1,0 +1,12 @@
+{% extends "logged_in_base.html" %}
+{% block content %}
+<h1 class="text-center my-4 display-3">{{ article.title }}</h1>
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <div class="card-body">
+            <p class="lead text-muted">{{ article.content }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
