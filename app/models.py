@@ -27,7 +27,7 @@ class Article(db.Model):
     likes = db.Column(db.Integer,default=0)
     laughs = db.Column(db.Integer,default=0)
     grimaces = db.Column(db.Integer,default=0)
-    blank = db.Column(db.Integer,default=0)
+    blanks = db.Column(db.Integer,default=0)
     questions = db.Column(db.Integer,default=0)
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'))

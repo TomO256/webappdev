@@ -130,14 +130,42 @@ def view(id):
                            title = article.title,
                            article = article)
 
-@app.route("/like",methods=["POST"])
-def like():
-    data = json.loads(request.data)
+@app.route("/react", methods=["POST"])
+@app.route("/react", methods=["POST"])
+def react():
+    # data = json.loads(request.data)
+    data = request.get_json()
+    logging.info(data)
     article_id = int(data.get("article_id"))
+    logging.info(article_id)
+    reaction = data.get("reaction")  # Get the reaction from the request
+    logging.info(reaction)
     article = Article.query.get(article_id)
-    article.likes += 1
+    
+    # Update the appropriate reaction count based on the reaction type
+    if reaction == "likes":
+        logging.info("here")
+        article.likes += 1
+    elif reaction == "laughs":
+        article.laughs += 1
+    elif reaction == "grimaces":
+        article.grimaces += 1
+    elif reaction == "blanks":
+        article.blanks += 1
+    elif reaction == "questions":
+        article.questions += 1
+    
     db.session.commit()
-    return json.dumps({"satus":"OK","likes":article.likes})
+    
+    return json.dumps({
+        "status": "OK",
+        "likes": article.likes,
+        "laughs": article.laughs,
+        "grimaces": article.grimaces,
+        "blanks": article.blanks,
+        "questions": article.questions
+    })
+
 
 
 @app.route("/quit")
