@@ -7,6 +7,19 @@
         <div class="card-body">
             <p class="lead text-muted">{{ article.content }}</p>
         </div>
+
+ 
+        <i>By {{ article.user.username | capitalize }} </i>
+        </br>
+        {{ article.category.category}}
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <a class="like" id="{{article.id}}">
+            <i class="far fa-thumbs-up"></i><span id="likes">Likes: {{ article.likes }}</span>
+        </a>
+        
     </div>
+    
+
+
 </div>
 {% endblock %}

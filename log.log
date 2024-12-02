@@ -8154,3 +8154,87 @@ INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:19:58] "[36mGET /static/bootstrap.m
 INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:19:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:19:58] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:19:58] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 836-790-206
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:01] "GET /view/2 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:01] "GET /static/bootstrap.min.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:01] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:01] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:04] "[32mGET /portfolio HTTP/1.1[0m" 302 -
+DEBUG:root:HERE
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:04] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:04] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:04] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:04] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+DEBUG:root:HERE
+INFO:root:Validated welcome form
+INFO:root:Redirected
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:06] "[32mPOST / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:06] "GET /login/Tom HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:06] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:06] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:06] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:06] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:root:Validated signin form
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:08] "[32mPOST /login/Tom HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:08] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:08] "GET /discover HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:08] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:08] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:08] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:08] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:13] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:13] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:13] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:15] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:15] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:15] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:15] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:15] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:16] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:21] "GET /view/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:22] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:22] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:22] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:22] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:44] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:45] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:46] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:46] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:46] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:26:46] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:36] "GET /view/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:36] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:36] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:36] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:39] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:40] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:40] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:40] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:40] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:41] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:41] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:41] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:41] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:42] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:42] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:42] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:42] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:42] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:27:43] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:29:36] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:29:36] "POST /like HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:29:41] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:29:41] "GET /discover HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:29:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:29:42] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:29:42] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2024 18:29:42] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
