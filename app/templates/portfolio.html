@@ -10,6 +10,9 @@
             <b>No Articles Published.</b>
         </div>
     {% else %}
+        <div class="alert alert-info" role="alert">
+            <b>Your articles have recieved {{total_reactions}} reactions.</b>
+        </div>
         <div class="row">
             {% for article in all_articles %}
                 <div class="col-md-4 mb-4">

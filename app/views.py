@@ -91,9 +91,13 @@ def portfolio():
         return redirect("/")         
     user_id = get_id("user",signed_in_as)
     user_articles = Article.query.filter_by(author_id=user_id).all()
+    total_reactions = 0
+    for article in user_articles:
+        total_reactions += article.likes + article.laughs + article.grimaces + article.blanks + article.surprises
     return render_template("portfolio.html",
                            title="Portfolio",
-                           all_articles=user_articles)
+                           all_articles=user_articles,
+                           total_reactions = total_reactions)
 
 @app.route("/create", methods=["GET","POST"])
 def create():
@@ -125,6 +129,8 @@ def view(id):
     '''
     View an article in a full page.
     '''
+    if not signed_in_as:
+        return redirect("/")     
     article = Article.query.get(id)
     return render_template("view_article.html",
                            title = article.title,
@@ -133,16 +139,15 @@ def view(id):
 @app.route("/react", methods=["POST"])
 @app.route("/react", methods=["POST"])
 def react():
-    # data = json.loads(request.data)
+    if not signed_in_as:
+        return redirect("/")     
     data = request.get_json()
     logging.info(data)
     article_id = int(data.get("article_id"))
     logging.info(article_id)
-    reaction = data.get("reaction")  # Get the reaction from the request
+    reaction = data.get("reaction")
     logging.info(reaction)
     article = Article.query.get(article_id)
-    
-    # Update the appropriate reaction count based on the reaction type
     if reaction == "likes":
         logging.info("here")
         article.likes += 1
@@ -165,8 +170,6 @@ def react():
         "blanks": article.blanks,
         "surprises": article.surprises
     })
-
-
 
 @app.route("/quit")
 def quit():
