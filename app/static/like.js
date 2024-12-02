@@ -21,7 +21,7 @@ $(document).ready(function(){
             dataType: "json",
             success: function(response){
                 console.log(response);
-                clicked_obj.find("#likes").text("Likes: " + response.likes);
+                clicked_obj.find("#likes").text(" "+response.likes);
             },
             error: function(error){
                 console.log(error);
