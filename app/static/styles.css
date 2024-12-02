@@ -1,0 +1,9 @@
+.card {
+    background-color: white;
+}
+
+.card-title {
+    font-size: x-large;
+    font-weight: bolder;
+    color: darkblue;
+}

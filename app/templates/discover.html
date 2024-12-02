@@ -1,0 +1,38 @@
+{% extends "logged_in_base.html" %}
+{% block content %}
+<h1>
+    Welcome back {{username}}
+</h1>
+
+<div class="container mt-5">
+    {% if all_articles|length == 0 %}
+        <div class="alert alert-info" role="alert">
+            <b>No Articles Published.</b>
+        </div>
+    {% else %}
+        <div class="row">
+            {% for article in all_articles %}
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ article.title }}</h5>
+                            <p class="card-text">
+                                <b>{{ article.content | truncate(200,True, '...',0) }}</b>
+                                </br>
+                                <i>By {{ article.user.username | capitalize }} </i>
+                                </br>
+                                Category: {{ article.category.category}}
+                                </br>
+                                <meta name="csrf-token" content="{{ csrf_token() }}">
+                                <a class="like" id="{{article.id}}">
+                                    <i class="far fa-thumbs-up"></i><span id="likes">Likes: {{ article.likes }}</span>
+                                </a>                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

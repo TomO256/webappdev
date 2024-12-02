@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <b> <h1> <center> Welcome to Connect & Reflect </center> </h1> </b>
+    <form action="" method="post" name="{{form_name}}" class="border p-4 rounded shadow">
+        {{ form.hidden_tag() }}
+        <h5>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            {{ form.username(class="form-control", autofocus=true) }}
+        </div>
+        </h5>
+        <button type="Submit" class="btn btn-primary btn-block">Continue</button>
+    </form>
+{% endblock %}

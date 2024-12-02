@@ -1,0 +1,15 @@
+{% include "get_flash.html" %}
+<form action="" method="post" name="{{form_name}}" class="border p-4 rounded shadow">
+    {{ form.hidden_tag() }}
+    <h5>
+    <div class="form-group">
+        <label for="username">Username:</label>
+        {{ form.username(class="form-control") }}
+    </div>
+    <div class="form-group">
+        <label for="username">Password:</label>
+        {{ form.password(class="form-control", autofocus=true) }}
+    </div>
+    </h5>
+    <button type="Submit" class="btn btn-primary btn-block">{{ submit_message }}</button>
+</form>
