@@ -22,9 +22,7 @@
                             <p class="card-text">
                                 <b>{{ article.content | truncate(200,True, '...',0) }}</b>
                                 </br>
-                                <i>By {{ article.user.username | capitalize }} </i>
-                                </br>
-                                Category: {{ article.category.category}}
+                                {{ article.category.category}}
                                 {% include "reactions.html" %}
                                 <div>
                                 <a href="{{ url_for('view', id=article.id) }}" class="btn btn-primary btn-block">View</a>

@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-    <b> <h1> <center> Welcome to Connect & Reflect </center> </h1> </b>
-    <form action="" method="post" name="{{form_name}}" class="border p-4 rounded shadow">
-        {{ form.hidden_tag() }}
-        <h5>
-        <div class="form-group">
-            <label for="username">Username:</label>
-            {{ form.username(class="form-control", autofocus=true) }}
-        </div>
-        </h5>
-        <button type="Submit" class="btn btn-primary btn-block">Continue</button>
-    </form>
+    <div class="container my-5">  <!-- Added container with margin -->
+        <h1 class="text-center mb-4 font-weight-bold">Welcome to Connect & Reflect</h1>  <!-- Improved header styling -->
+
+        <form action="" method="post" name="{{ form_name }}" class="border p-4 rounded shadow-lg">
+            {{ form.hidden_tag() }}
+            
+            <div class="form-group mb-3">
+                <label for="username">Username:</label>
+                {{ form.username(class="form-control", autofocus=true, placeholder="Enter your username") }}
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Continue</button>
+        </form>
+    </div>
 {% endblock %}
