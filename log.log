@@ -13821,3 +13821,160 @@ INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 14:58:34] "[36mGET /static/bootstrap.m
 INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 14:58:34] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 14:58:34] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 14:58:34] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 836-790-206
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:30] "GET /login/Tom HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:30] "[36mGET /static/fontawesome-free-5.3.1-web/css/all.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:30] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:30] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:30] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:43] "[32mGET /discover HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:43] "GET /login/?next=/discover HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:43] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:43] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:43] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:43] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:43] "[36mGET /static/fontawesome-free-5.3.1-web/css/all.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:21:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:root:Validated signin form
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:50] "POST /login/?next=/discover HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:50] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:50] "[36mGET /static/fontawesome-free-5.3.1-web/css/all.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:51] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:51] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:root:Validated signin form
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:54] "POST /login/?next=/discover HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:54] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:54] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:54] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:54] "[36mGET /static/fontawesome-free-5.3.1-web/css/all.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:root:Validated signin form
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:58] "[32mPOST /login/?next=/discover HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:58] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:58] "GET /discover HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:58] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:58] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:58] "[36mGET /static/fontawesome-free-5.3.1-web/css/all.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:58] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:22:58] "GET /static/fontawesome-free-5.3.1-web/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 -
+INFO:root:{'article_id': '1', 'reaction': 'blanks'}
+INFO:root:1
+INFO:root:blanks
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:23:06] "POST /react HTTP/1.1" 200 -
+INFO:root:{'article_id': '1', 'reaction': 'blanks'}
+INFO:root:1
+INFO:root:blanks
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:23:07] "POST /react HTTP/1.1" 200 -
+INFO:root:{'article_id': '1', 'reaction': 'grimaces'}
+INFO:root:1
+INFO:root:grimaces
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:23:08] "POST /react HTTP/1.1" 200 -
+INFO:root:{'article_id': '1', 'reaction': 'laughs'}
+INFO:root:1
+INFO:root:laughs
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:23:09] "POST /react HTTP/1.1" 200 -
+INFO:root:{'article_id': '3', 'reaction': 'likes'}
+INFO:root:3
+INFO:root:likes
+INFO:root:here
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:23:10] "POST /react HTTP/1.1" 200 -
+INFO:root:{'article_id': '3', 'reaction': 'blanks'}
+INFO:root:3
+INFO:root:blanks
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:23:12] "POST /react HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/t/Coursework2/app/views.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 836-790-206
+INFO:werkzeug: * Detected change in '/home/t/Coursework2/app/views.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 836-790-206
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:24] "GET /portfolio HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:25] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:25] "[36mGET /static/fontawesome-free-5.3.1-web/css/all.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:25] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:25] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:28] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:28] "GET /discover HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:28] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:28] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:28] "[36mGET /static/fontawesome-free-5.3.1-web/css/all.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:28] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:28] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:31] "GET /edit/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:31] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:32] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:32] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:32] "[36mGET /static/fontawesome-free-5.3.1-web/css/all.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:35] "GET /edit/2 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:35] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:35] "[36mGET /static/fontawesome-free-5.3.1-web/css/all.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:35] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:35] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:38] "[32mGET /edit/3 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:39] "GET /discover HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:39] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:39] "GET /static/bootstrap.min.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:39] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:39] "[36mGET /static/fontawesome-free-5.3.1-web/css/all.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:27:39] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/t/Coursework2/app/views.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 836-790-206
+INFO:werkzeug: * Detected change in '/home/t/Coursework2/app/views.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 836-790-206
+INFO:werkzeug: * Detected change in '/home/t/Coursework2/app/views.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 836-790-206
+INFO:werkzeug: * Detected change in '/home/t/Coursework2/app/views.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 836-790-206
+INFO:werkzeug: * Detected change in '/home/t/Coursework2/app/views.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 836-790-206
+INFO:werkzeug: * Detected change in '/home/t/Coursework2/app/views.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 836-790-206
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:54] "[32mGET /quit HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:54] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:54] "[36mGET /static/fontawesome-free-5.3.1-web/css/all.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:54] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:54] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:59] "[32mGET /quit HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:59] "GET /login/?next=/quit HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:59] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:59] "[36mGET /static/fontawesome-free-5.3.1-web/css/all.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:59] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:59] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:29:59] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:root:Validated signin form
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:30:05] "[32mPOST /login/?next=/quit HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:30:05] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:30:05] "GET /discover HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:30:05] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:30:05] "[36mGET /static/like.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:30:05] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:30:05] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [04/Dec/2024 17:30:05] "[36mGET /static/fontawesome-free-5.3.1-web/css/all.css HTTP/1.1[0m" 304 -
