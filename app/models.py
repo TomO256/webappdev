@@ -1,7 +1,8 @@
 from app import db
+from flask_login import UserMixin
 
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     '''
     A database class holding the information about each user
     id: Unique ID for each user
@@ -12,9 +13,23 @@ class User(db.Model):
     username = db.Column(db.String(300), unique=True)
     password = db.Column(db.String(300))
     articles = db.relationship("Article", backref="user", lazy="dynamic")
+    authenticated = False
 
     def __repr__(self):
         return '{}{}{}'.format(self.id, self.username, self.password)
+    
+    def get_id(self):
+        return str(self.id)
+    
+    def is_authenticated(self):
+        return self.authenticated
+    
+    def is_active(self):
+        return True
+    
+    def is_anonymous(self):
+        return False
+
 
 class Article(db.Model):
     '''

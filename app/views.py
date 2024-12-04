@@ -4,14 +4,21 @@ from flask_admin.contrib.sqla import ModelView
 from .forms import WelcomeForm, LoginForm, ArticleForm
 from .models import User, Article, Category
 from .Library import *
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 import logging, json
 
 logging.basicConfig(filename="log.log",encoding="utf-8",level=logging.DEBUG)
-signed_in_as = False
 admin.add_view(ModelView(User, db.session))
 admin.add_view(ModelView(Article, db.session))
 admin.add_view(ModelView(Category, db.session))
 
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = "login"
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 
 @app.route("/", methods=["GET","POST"])
@@ -19,7 +26,7 @@ def index(username=None):
     # c = Category(category="Cyber Security")
     # db.session.add(c)
     # db.session.commit()
-    if not signed_in_as:
+    if not current_user.is_authenticated:
         form = WelcomeForm()
         logging.debug("HERE")
         if form.validate_on_submit():
@@ -40,12 +47,14 @@ def index(username=None):
 @app.route("/login/",methods=["GET","POST"])
 @app.route("/login/<string:username>",methods=["GET","POST"])
 def login(username=None):
-    global signed_in_as
     form = LoginForm(username=username)
     if form.validate_on_submit():
         logging.info("Validated signin form")
         if check_creds(form.username.data,form.password.data):
             signed_in_as = form.username.data
+            user_id = get_id("user",signed_in_as)
+            user_object = User.query.get(user_id)
+            login_user(user_object)
             return redirect("/")
         flash("Invalid username and password combination")
     return render_template("login.html",
@@ -55,7 +64,6 @@ def login(username=None):
 @app.route("/signup/",methods=["GET","POST"])
 @app.route("/signup/<string:username>",methods=["GET","POST"])
 def signup(username=None): 
-    global signed_in_as
     form = LoginForm(username=username)
     if form.validate_on_submit():
         logging.info("Validated signup form")
@@ -69,7 +77,6 @@ def signup(username=None):
         user = User(username=form.username.data.upper(),password=hashed_password)
         db.session.add(user)
         db.session.commit()
-        signed_in_as = form.username.data
         logging.info("Redirected to base")
         return redirect("/")
     return render_template("signup.html",
@@ -77,19 +84,17 @@ def signup(username=None):
                            form=form,submit_message="Sign Up")
 
 @app.route("/discover")
-def discover():
-    if not signed_in_as:
-        return redirect("/")         
+@login_required
+def discover():   
     return render_template("discover.html",
                            title="Discover",
-                    username=signed_in_as,
+                    username=current_user.username,
                     all_articles=Article.query.order_by(Article.likes.desc()).all())
 
 @app.route("/portfolio")
+@login_required
 def portfolio():
-    if not signed_in_as:
-        return redirect("/")         
-    user_id = get_id("user",signed_in_as)
+    user_id = get_id("user",current_user.username)
     user_articles = Article.query.filter_by(author_id=user_id).all()
     total_reactions = 0
     for article in user_articles:
@@ -100,9 +105,8 @@ def portfolio():
                            total_reactions = total_reactions)
 
 @app.route("/create", methods=["GET","POST"])
+@login_required
 def create():
-    if not signed_in_as:
-        return redirect("/")
     form = ArticleForm()
     if form.validate_on_submit():
         logging.info("Validated Article Form")
@@ -115,7 +119,7 @@ def create():
                            form=ArticleForm(title=form.title.data,content=form.content.data,category=form.category.data,
                                             submit_message="Create Article"))
         category_id = get_id("category",form.category.data)
-        author_id = get_id("user",signed_in_as)
+        author_id = get_id("user",current_user.username)
         article = Article(title=form.title.data,content=form.content.data,category_id=category_id,author_id=author_id)
         db.session.add(article)
         db.session.commit()
@@ -127,9 +131,10 @@ def create():
                            submit_message="Create Article")
 
 @app.route("/edit/<int:id>", methods=["GET","POST"])
+@login_required
 def edit(id):
     article = Article.query.get(id)
-    if article.author_id != get_id("user",signed_in_as):
+    if article.author_id != get_id("user",current_user.username):
         return redirect("/discover")
     form=ArticleForm(title=article.title,content=article.content,category=article.category)
     if form.validate_on_submit():
@@ -155,19 +160,18 @@ def edit(id):
 @app.route("/delete/<int:id>")
 def delete(id):
     article = Article.query.get(id)
-    if article.author_id != get_id("user",signed_in_as):
+    if article.author_id != get_id("user",current_user.username):
         return redirect("/discover")
     db.session.delete(article)
     db.session.commit()
     return redirect("/portfolio")
 
 @app.route("/view/<int:id>")
+@login_required
 def view(id):
     '''
     View an article in a full page.
     '''
-    if not signed_in_as:
-        return redirect("/")     
     article = Article.query.get(id)
     return render_template("view_article.html",
                            title = article.title,
@@ -175,9 +179,8 @@ def view(id):
 
 @app.route("/react", methods=["POST"])
 @app.route("/react", methods=["POST"])
+@login_required
 def react():
-    if not signed_in_as:
-        return redirect("/")     
     data = request.get_json()
     logging.info(data)
     article_id = int(data.get("article_id"))
@@ -209,7 +212,7 @@ def react():
     })
 
 @app.route("/quit")
+@login_required
 def quit():
-    global signed_in_as
-    signed_in_as=False
+    logout_user()
     return redirect("/")
