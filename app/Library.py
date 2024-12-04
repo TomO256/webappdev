@@ -1,30 +1,38 @@
-import hashlib, logging
+import hashlib
+import logging
 from .models import User, Article, Category
 from app import app
 
 
-def check_creds(username,password):
+def check_creds(username, password):
     all_users = User.query.all()
     for user in all_users:
-        if user.username == username.upper() and user.password == hash_data(password):
+        if (user.username == username.upper() and
+                user.password == hash_data(password)):
             return True
     return False
 
-def validate_article(title,content,original_title=None,original_content=None):
+
+def validate_article(title, content,
+                     original_title=None, original_content=None):
     all_articles = Article.query.all()
     for article in all_articles:
         if article.title == title and article.title != original_title:
-            return "There is already an article with that name. Please choose a different name for your article."
+            return """There is already an article with that name.
+Please choose a different name for your article."""
         if article.content == content and article.content != original_content:
-            return "The content of the article is a copy of a previously existing article."
+            return """The content of the article is a copy of
+ a previously existing article."""
     return True
+
 
 def hash_data(data):
     hasher = hashlib.new("sha256")
     hasher.update(data.encode())
     return hasher.hexdigest()
 
-def get_id(table,data):
+
+def get_id(table, data):
     if not data:
         return False
     if table == "category":
@@ -44,6 +52,7 @@ def get_id(table,data):
         return False
     return False
 
+
 def get_all_categories():
     with app.app_context():
         categories = []
@@ -51,9 +60,11 @@ def get_all_categories():
             categories.append(item.category)
         return categories
 
+
 def user_exists(user):
     '''
-    Find if a username is in the database, return True if they are, False if not
+    Find if a username is in the database,
+    return True if they are, False if not
     '''
     if User.query.filter_by(username=user.upper()).first():
         return True
