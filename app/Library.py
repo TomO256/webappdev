@@ -5,6 +5,18 @@ from app import app
 
 
 def check_creds(username, password):
+    '''
+    Checks if the password entered by the user
+    matches the one in the database.
+
+    @params
+    username (String): username to check
+    password (String): password to check
+
+    @return
+    Boolean True: on valid credentials
+    Boolean False: on invalid credentials
+    '''
     all_users = User.query.all()
     for user in all_users:
         if (user.username == username.upper() and
@@ -15,6 +27,20 @@ def check_creds(username, password):
 
 def validate_article(title, content,
                      original_title=None, original_content=None):
+    '''
+    Checks if the article title and content matches
+    the title or content of an article in the database.
+
+    @params
+    title (string): title to check
+    content (string): content to check
+    original_title (string): title to ignore
+    original_content(string): content to ignore
+
+    @return
+    String: Error message string describing error on matching content
+    Boolean True: if no match of title and article
+    '''
     all_articles = Article.query.all()
     for article in all_articles:
         if article.title == title and article.title != original_title:
@@ -27,12 +53,35 @@ Please choose a different name for your article."""
 
 
 def hash_data(data):
+    '''
+    Hashes the data using an inbuilt python library to enable
+    secure storing of passwords.
+
+    @params
+    data (String): Data to hash
+
+    @return
+    String: Hexadecimal SHA256 hash of the data
+    '''
     hasher = hashlib.new("sha256")
     hasher.update(data.encode())
     return hasher.hexdigest()
 
 
 def get_id(table, data):
+    '''
+    Converts the main database field of table to the
+    ID value in the database.
+
+    @params:
+    table (String): table to query one of
+                        ("user","category","article")
+    data (String): category, username or title of a database item
+
+    @return
+    Integer: Database ID of the element found
+    Boolean False: Error or ID not found (ie elemtn doesn't exist)
+    '''
     if not data:
         return False
     if table == "category":
@@ -54,6 +103,13 @@ def get_id(table, data):
 
 
 def get_all_categories():
+    '''
+    Gets all the categories from the categories table.
+
+    @return
+    List: A list of all the categories currently stored in the
+          Category table.
+    '''
     with app.app_context():
         categories = []
         for item in Category.query.all():
@@ -63,8 +119,14 @@ def get_all_categories():
 
 def user_exists(user):
     '''
-    Find if a username is in the database,
-    return True if they are, False if not
+    Finds if a username appears in the database
+
+    @params
+    String user: username to check
+
+    @return
+    Boolean True: If matching username in the database
+    Boolean False: If username is not in the databse
     '''
     if User.query.filter_by(username=user.upper()).first():
         return True

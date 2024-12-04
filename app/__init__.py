@@ -6,6 +6,10 @@ from flask_babel import Babel
 from flask_wtf.csrf import CSRFProtect
 from flask_bootstrap import Bootstrap
 
+'''
+Initial setup of the app and starts the running
+'''
+
 
 def get_locale():
     if request.args.get('lang'):
