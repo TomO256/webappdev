@@ -96,6 +96,10 @@ def signup(username=None):
         db.session.add(user)
         db.session.commit()
         logging.info("Redirected to base")
+        signed_in_as = form.username.data
+        user_id = get_id("user", signed_in_as)
+        user_object = User.query.get(user_id)
+        login_user(user_object)
         return redirect("/")
     return render_template("signup.html",
                            title="Sign Up",
@@ -213,7 +217,7 @@ def edit(id):
                            submit_message="Edit Article")
 
 
-@app.route("/delete/<int:id>", methods=["POST"])
+@app.route("/delete/<int:id>", methods=["GET", "POST"])
 def delete(id):
     '''
     Responsible for deleting an article from the database,
